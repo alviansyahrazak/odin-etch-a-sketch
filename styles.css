@@ -1,0 +1,256 @@
+@font-face {
+    font-family: "Rondo";
+    src: url(./assets/fonts/Rondo\ Regular.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+.sketch_frame {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 10px;
+    background-color: #df1128;
+    box-shadow: 
+        0px 1px 0 rgba(255, 255, 255, 0.05) inset, 
+        1px 0px 0 rgba(255, 255, 255, 0.05) inset, 
+        1px 2px 0 rgba(255, 255, 255, 0.05) inset, 
+        2px 1px 0 rgba(255, 255, 255, 0.05) inset, 
+        2px 3px 0 rgba(255, 255, 255, 0.05) inset, 
+        3px 2px 0 rgba(255, 255, 255, 0.05) inset, 
+        3px 4px 0 rgba(255, 255, 255, 0.05) inset, 
+        4px 3px 0 rgba(255, 255, 255, 0.05) inset, 
+        4px 5px 0 rgba(255, 255, 255, 0.05) inset, 
+        5px 4px 0 rgba(255, 255, 255, 0.05) inset, 
+        5px 6px 0 rgba(255, 255, 255, 0.05) inset, 
+        6px 5px 0 rgba(255, 255, 255, 0.05) inset, 
+        6px 7px 0 rgba(255, 255, 255, 0.05) inset, 
+        7px 6px 0 rgba(255, 255, 255, 0.05) inset, 
+        7px 9px 0 rgba(255, 255, 255, 0.05) inset, 
+        8px 7px 0 rgba(255, 255, 255, 0.05) inset, 
+        8px 9px 0 rgba(255, 255, 255, 0.05) inset, 
+        9px 8px 0 rgba(255, 255, 255, 0.05) inset, 
+        -0px -1px 0 rgba(0, 0, 0, 0.05) inset, 
+        -1px -0px 0 rgba(0, 0, 0, 0.05) inset, 
+        -1px -2px 0 rgba(0, 0, 0, 0.05) inset, 
+        -2px -1px 0 rgba(0, 0, 0, 0.05) inset, 
+        -2px -3px 0 rgba(0, 0, 0, 0.05) inset, 
+        -3px -2px 0 rgba(0, 0, 0, 0.05) inset, 
+        -3px -4px 0 rgba(0, 0, 0, 0.05) inset, 
+        -4px -3px 0 rgba(0, 0, 0, 0.05) inset, 
+        -4px -5px 0 rgba(0, 0, 0, 0.05) inset, 
+        -5px -4px 0 rgba(0, 0, 0, 0.05) inset, 
+        -5px -6px 0 rgba(0, 0, 0, 0.05) inset, 
+        -6px -5px 0 rgba(0, 0, 0, 0.05) inset, 
+        -6px -7px 0 rgba(0, 0, 0, 0.05) inset, 
+        -7px -6px 0 rgba(0, 0, 0, 0.05) inset, 
+        -7px -9px 0 rgba(0, 0, 0, 0.05) inset, 
+        -8px -7px 0 rgba(0, 0, 0, 0.05) inset, 
+        -8px -9px 0 rgba(0, 0, 0, 0.05) inset, 
+        -9px -8px 0 rgba(0, 0, 0, 0.05) inset, 
+        0 0 3px rgba(0, 0, 0, 0.3), 
+        2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffefbb;
+    border-radius: 10px 10px 0 0;
+}
+
+.top_wrapper {
+    display: flex;
+    gap: 2em;
+    align-items: last baseline;
+}
+
+.text_left,
+.text_right {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-family: "Rondo";
+    font-style: normal;
+    font-size: 40px;
+    font-weight: 400;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.canvas {
+    width: 78%;
+    margin: 0 auto;
+    height: 50vh;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    background-color: #c0c0c0;
+    box-shadow: 
+        0px 1px 0 rgba(255, 255, 255, 0.08),
+        1px 0px 0 rgba(255, 255, 255, 0.08),
+        1px 2px 0 rgba(255, 255, 255, 0.08),
+        2px 1px 0 rgba(255, 255, 255, 0.08),
+        2px 3px 0 rgba(255, 255, 255, 0.08),
+        3px 2px 0 rgba(255, 255, 255, 0.08),
+        3px 4px 0 rgba(255, 255, 255, 0.08),
+        4px 3px 0 rgba(255, 255, 255, 0.08),
+        4px 5px 0 rgba(255, 255, 255, 0.08),
+        5px 4px 0 rgba(255, 255, 255, 0.08),
+        -0px -1px 0 rgba(0, 0, 0, 0.05),
+        -1px -0px 0 rgba(0, 0, 0, 0.05),
+        -1px -2px 0 rgba(0, 0, 0, 0.05),
+        -2px -1px 0 rgba(0, 0, 0, 0.05),
+        -2px -3px 0 rgba(0, 0, 0, 0.05),
+        -3px -2px 0 rgba(0, 0, 0, 0.05),
+        -3px -4px 0 rgba(0, 0, 0, 0.05),
+        -4px -3px 0 rgba(0, 0, 0, 0.05),
+        -4px -5px 0 rgba(0, 0, 0, 0.05),
+        -5px -4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.bottom_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.round {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    background: radial-gradient(ellipse at center, rgba(224, 224, 224, 1) 0%, rgba(242, 242, 242, 1) 22%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.7) inset;
+}
+
+.decoration_left,
+.decoration_right {
+    border-radius: 50%;
+    margin: 0 25px 10px 25px;
+    
+}
+
+.buttons {
+    display: flex;
+    gap: 2em;
+}
+
+button {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 15px;
+    color: #000000;
+    border: none;
+    background: #ffefbb;
+    cursor: pointer;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.7) inset;
+}
+
+button:hover {
+  scale: 0.98;  
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .sketch_frame {
+        width: 95%;
+    }
+    
+    .text_left,
+    .text_right {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .canvas {
+        height: 40vh;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header {
+        padding: 3em 0;
+    }
+
+    .top_wrapper {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        text-align: center;
+        
+    }
+    
+    .text_left,
+    .text_right {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .canvas {
+        height: 30vh;
+    }
+
+    .bottom_wrapper {
+        align-items: center;
+        height: auto;
+        gap: 1em;
+        padding: 1em 0;
+    }
+
+    .round {
+        height: 50px;
+        width: 50px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}
+

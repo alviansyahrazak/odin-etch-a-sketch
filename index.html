@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Etch A Sketch</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-</body>
+    <div class="sketch_frame">
+        <div class="header">
+            <div class="top_wrapper">
+                <div class="text_left">Magic</div>
+                <div class="logo">Odin Etch A Sketch</div>
+                <div class="text_right">Screen</div>
+            </div>
+        </div>
+
+        <div class="canvas">
+        </div>
+
+        <div class="bottom_wrapper">
+            <div class="decoration_left">
+                <div class="round"></div>
+            </div>
+            <div class="buttons">
+                <button id="blackMarkerButton" class="hidden">Black Marker</button>
+                <button id="RGBMarkerButton" >RGB Marker</button>
+                <button id="resetCanvasButton">Reset</button>
+                <button id="promptInputSquaresButton">Change Canvas Size</button>
+            </div>
+            <div class="decoration_right">
+                <div class="round"></div>
+            </div>
+        </div>
+    </div>
+   
+    <script src="script.js"></script>
 </html>
