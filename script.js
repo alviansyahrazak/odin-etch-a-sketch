@@ -44,9 +44,19 @@ const makeCanvas = (num) => {
         square.className = "square";
         square.style.opacity = 1
 
-        square.addEventListener("mouseenter", () => {
-            currentMarker(square)
-        })
+        square.addEventListener("mouseenter", () => applyColor(square));
+        square.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            applyColor(square);
+        });
+        square.addEventListener("touchmove", (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const element = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (element && element.classList.contains("square")) {
+                applyColor(element);
+            }
+        });
 
         canvas.appendChild(square)
     }
