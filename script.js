@@ -39,6 +39,10 @@ const makeCanvas = (num) => {
         currentMarker = RGBMarker
     })
 
+    const applyColor = (square) => {
+        currentMarker(square);
+    };
+
     for(let i = 0; i < (num * num); i++) {
         const square = document.createElement("div")
         square.className = "square";
